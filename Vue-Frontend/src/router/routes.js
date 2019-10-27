@@ -55,7 +55,7 @@ const routes = [
       },
       {
         path: "mapa",
-        name: "table-list",
+        name: "mapa",
         component: Mapa
       }
     ]

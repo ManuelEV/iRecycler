@@ -44,6 +44,7 @@
 
       </dashboard-content>
 
+
       <content-footer></content-footer>
     </div>
   </div>
@@ -55,6 +56,7 @@ import TopNavbar from "./TopNavbar.vue";
 import ContentFooter from "./ContentFooter.vue";
 import DashboardContent from "./Content.vue";
 import MobileMenu from "./MobileMenu";
+//import Mapa from "../../pages/";
 export default {
   components: {
     TopNavbar,
