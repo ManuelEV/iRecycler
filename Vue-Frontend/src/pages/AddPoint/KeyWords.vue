@@ -32,8 +32,10 @@ export default {
   },
   methods: {
     addKeyWord() {
-      this.keywords.push(this.newtag);
-      this.newtag = "";
+      if (this.newtag != "") {
+        this.keywords.push(this.newtag);
+        this.newtag = "";
+      }
     }
   }
 };

@@ -28,7 +28,8 @@ export default {
     addNewPoint(){
       console.log(this.$refs.formPunto.punto);
       console.log(this.$refs.keyCard.keywords);
-      console.log(this.$refs.locCard);
+      console.log(this.$refs.locCard.lat);
+      console.log(this.$refs.locCard.lng);
     }
   }
 };
