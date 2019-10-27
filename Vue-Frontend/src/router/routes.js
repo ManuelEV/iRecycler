@@ -10,6 +10,7 @@ import Icons from "@/pages/Icons.vue";
 import Maps from "@/pages/Maps.vue";
 import Typography from "@/pages/Typography.vue";
 import TableList from "@/pages/TableList.vue";
+import AddPoint from "@/pages/AddPoint.vue";
 import Mapa from "../pages/Mapa";
 
 const routes = [
@@ -27,6 +28,11 @@ const routes = [
         path: "stats",
         name: "stats",
         component: UserProfile
+      }, 
+      {
+        path: "nuevo-punto",
+        name: "nuevo punto",
+        component: AddPoint
       },
       {
         path: "notifications",
