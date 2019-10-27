@@ -39,7 +39,7 @@ export default {
       punto: {
         name: "El nombre menos esperado",
         desc: "La Descripción más cabrona",
-        imageData: "/img/base-point.c7dddeb5.jpg"
+        imageData: "/img/background2.7e949f88.jpg"
       }
     };
   },
