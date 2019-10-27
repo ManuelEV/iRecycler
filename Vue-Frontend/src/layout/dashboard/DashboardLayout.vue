@@ -10,6 +10,7 @@
         <sidebar-link to="/maps" name="Map" icon="ti-map"/>
         <sidebar-link to="/notifications" name="Notifications" icon="ti-bell"/>
         <sidebar-link to="/nuevo-punto" name="Agregar Nuevo Punto" icon="ti-plus"/>
+        <sidebar-link to="/mapa" name="Mapa" icon="ti-map"/>
       </template>
       <mobile-menu>
         <li class="nav-item">
@@ -44,6 +45,7 @@
 
       </dashboard-content>
 
+
       <content-footer></content-footer>
     </div>
   </div>
@@ -55,6 +57,7 @@ import TopNavbar from "./TopNavbar.vue";
 import ContentFooter from "./ContentFooter.vue";
 import DashboardContent from "./Content.vue";
 import MobileMenu from "./MobileMenu";
+//import Mapa from "../../pages/";
 export default {
   components: {
     TopNavbar,
