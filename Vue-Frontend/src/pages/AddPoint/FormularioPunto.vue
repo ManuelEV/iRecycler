@@ -3,10 +3,10 @@
     <div slot="image">
       <div
         class="base-image-input"
-        :style="{ 'background-image': `url(${imageData})` }"
+        :style="{ 'background-image': `url(${punto.imageData})` }"
         @click="chooseImage"
       >
-        <span v-if="!imageData" class="placeholder">Choose an Image</span>
+        <span v-if="!punto.imageData" class="placeholder">Escoge una Imagen</span>
         <input class="file-input" ref="fileInput" type="file" @input="onSelectFile" />
       </div>
     </div>
@@ -17,8 +17,7 @@
             <fg-input
               type="text"
               label="Nombre del Punto"
-              placeholder="Paper dashboard"
-              v-model="user.company"
+              v-model="punto.name"
             ></fg-input>
           </h4>
         </div>
@@ -26,8 +25,7 @@
           <fg-input
             type="text"
             label="Descripción"
-            placeholder="Paper dashboard"
-            v-model="user.company"
+            v-model="punto.desc"
           ></fg-input>
         </p>
       </div>
@@ -38,31 +36,10 @@
 export default {
   data() {
     return {
-      imageData: "/img/base-point.c7dddeb5.jpg",
-      details: [
-        {
-          title: "12",
-          subTitle: "Files"
-        },
-        {
-          title: "2GB",
-          subTitle: "Used"
-        },
-        {
-          title: "24,6$",
-          subTitle: "Spent"
-        }
-      ],
-      user: {
-        company: "Paper Dashboard",
-        username: "michael23",
-        email: "",
-        firstName: "Chet",
-        lastName: "Faker",
-        address: "Melbourne, Australia",
-        city: "Melbourne",
-        postalCode: "",
-        aboutMe: `We must accept finite disappointment, but hold on to infinite hope.`
+      punto: {
+        name: "El nombre menos esperado",
+        desc: "La Descripción más cabrona",
+        imageData: "/img/base-point.c7dddeb5.jpg"
       }
     };
   },
@@ -86,7 +63,7 @@ export default {
       if (files && files[0]) {
         const reader = new FileReader();
         reader.onload = e => {
-          this.imageData = e.target.result;
+          this.punto.imageData = e.target.result;
         };
         reader.readAsDataURL(files[0]);
         this.$emit("input", files[0]);
@@ -98,7 +75,7 @@ export default {
 <style scoped>
 .base-image-input {
   display: block;
-  height: 200px;
+  height: 230px;
   cursor: pointer;
   background-size: cover;
   background-position: center center;
