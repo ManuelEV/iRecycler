@@ -35,6 +35,8 @@ Icon.Default.mergeOptions({
   shadowUrl: require('leaflet/dist/images/marker-shadow.png')
 });
 
+Vue.prototype.ruta = 'http://localhost:7070';
+
 Vue.use(PaperDashboard);
 
 /* eslint-disable no-new */

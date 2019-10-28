@@ -44,7 +44,7 @@
     LControl
   } from "vue2-leaflet";
 
-
+  import axios from 'axios';
 
   export default {
     name: "MultiMap",
@@ -69,6 +69,10 @@
       }
     },
     methods: {
+      list(){
+        console.log(this.ruta);
+        console.log("SADASDSD");
+      },
       showLongText() {
         this.showParagraph = !this.showParagraph;
       },
@@ -95,6 +99,9 @@
           alert("Tu navegador no soporta esto")
         }
       }
+    },
+    mounted(){
+      this.list();
     }
 
   };
