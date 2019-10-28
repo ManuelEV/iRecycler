@@ -72,6 +72,15 @@
       list(){
         console.log(this.ruta);
         console.log("SADASDSD");
+
+        const url = this.ruta+"/puntos";
+        console.log(url);
+
+        axios.get(url)
+          .then(function (r) {
+            const response = r.data;
+            console.log(response);
+          });
       },
       showLongText() {
         this.showParagraph = !this.showParagraph;
