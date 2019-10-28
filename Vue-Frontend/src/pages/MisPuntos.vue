@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="row" v-for="(punto, index) in misPuntos" :key="index">
-      <div class="col-md-6 col-12">
+    <div v-for="(punto, index) in misPuntos" :key="index">
+      <div>
         <chart-card
           :title="punto.nombre"
           :sub-title="punto.descripcion"
@@ -31,7 +31,14 @@ export default {
           nombre: "nombre mal escrito",
           descripcion: "La peor descripcion",
           capacidad: 60,
-          data: { labels: ["40%", "60%"], series: [40, 60] },
+          data: { labels: [], series: [40, 60] },
+          options: {}
+        },
+        {
+          nombre: "nombre mal escrito 2",
+          descripcion: "La peor descripcion",
+          capacidad: 60,
+          data: { labels: [], series: [40, 60] },
           options: {}
         }
       ]

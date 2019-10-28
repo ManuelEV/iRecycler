@@ -3,7 +3,7 @@
   <div class="row map">
     <l-map :zoom="zoom" :center="center"> <!-- @click="addMarker">-->
       <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
-      <l-marker v-for="addM, index in markers" :lat-lng="addM">
+      <l-marker v-for="(addM, index) in markers" :lat-lng="addM" :key="index">
         <l-popup>
           <b>Nombre:</b><br>
           {{nombres[index]}} <br>
