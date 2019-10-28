@@ -1,6 +1,9 @@
 const express = require('express')
 const router = express.Router()
 const Punto = require('../models/punto')
+const multer = require('multer')
+const upload = multer({dest: './uploads'})
+
 
 
 // Todos los puntos
@@ -14,12 +17,14 @@ router.get('/', async (req, res) => {
  })
  
  // Agregar un punto
- router.post('/', async (req, res) => {
-     const punto = new Punto ({
+ router.post('/', upload.single('file'), async (req, res) => {
+    req.body.imgPath
+    const punto = new Punto ({
         nombre: req.body.nombre,
         latitud: req.body.latitud,
         longitud: req.body.longitud,
-        descripcion: req.body.descripcion
+        descripcion: req.body.descripcion,
+        keywords: req.body.keywords
     })
     try {
         const newPunto = await punto.save()

@@ -34,5 +34,5 @@ app.get('/', (req,res) => {
 
 // Puerto escucha
 app.listen(port, () => {
-    console.log('Servidor Iniciado')
+    console.log('Server Started')
 })

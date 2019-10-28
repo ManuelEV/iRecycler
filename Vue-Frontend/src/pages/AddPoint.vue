@@ -54,6 +54,7 @@ export default {
       this.$refs.keyCard.keywords = [];
       this.$refs.locCard.lng = null;
       this.$refs.locCard.lat = null;
+      this.$refs.locCard.markers = [];
     }
   }
 };
