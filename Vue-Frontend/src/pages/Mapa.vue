@@ -18,6 +18,15 @@
       <l-marker v-for="addM, index in markers" :lat-lng="addM">
 
       </l-marker>
+      <l-control class="example-custom-control">
+        <div class="text-center">
+          <p-button type="info"
+                    @click.native.prevent="currentLocation">
+            Ubicación actual
+          </p-button>
+        </div>
+      </l-control>
+
     </l-map>
   </div>
 
@@ -31,8 +40,10 @@
     LMarker,
     LPolyline,
     LLayerGroup,
-    LPopup
+    LPopup,
+    LControl
   } from "vue2-leaflet";
+
 
 
   export default {
@@ -43,7 +54,8 @@
       LMarker,
       LPolyline,
       LLayerGroup,
-      LPopup
+      LPopup,
+      LControl
     },
     data() {
       return {
@@ -68,6 +80,20 @@
         this.markers.push(event.latlng);
         console.log(event.latlng.lat);
         console.log(event.latlng.lng);
+
+      },
+      mostrarUbicacion (ubicacion) {
+        const lng = ubicacion.coords.longitude;
+        const lat = ubicacion.coords.latitude;
+        console.log(`longitud: ${ lng } | latitud: ${ lat }`);
+        this.center = L.latLng(lat, lng);
+      },
+      currentLocation(){
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(this.mostrarUbicacion);
+        }else{
+          alert("Tu navegador no soporta esto")
+        }
       }
     }
 
@@ -78,4 +104,5 @@
   .map {
     height: 95vh;
   }
+
 </style>
