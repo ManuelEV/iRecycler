@@ -19,7 +19,8 @@ router.get('/', async (req, res) => {
         nombre: req.body.nombre,
         latitud: req.body.latitud,
         longitud: req.body.longitud,
-        descripcion: req.body.descripcion
+        descripcion: req.body.descripcion,
+        keywords: req.body.keywords
     })
     try {
         const newPunto = await punto.save()

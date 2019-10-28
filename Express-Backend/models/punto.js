@@ -22,8 +22,12 @@ const PuntoSchema = mongoose.Schema(
             min: 0,
             max: 100
         },
-        keywords: {
-            type: Array,
+        keywords: [{
+            type: String
+        }],
+        img: {
+            data: Buffer,
+            contentType: String
         }
     }
   );
