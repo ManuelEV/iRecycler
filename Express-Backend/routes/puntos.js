@@ -18,13 +18,13 @@ router.get('/', async (req, res) => {
  
  // Agregar un punto
  router.post('/', upload.single('file'), async (req, res) => {
-    req.body.imgPath
     const punto = new Punto ({
         nombre: req.body.nombre,
         latitud: req.body.latitud,
         longitud: req.body.longitud,
         descripcion: req.body.descripcion,
-        keywords: req.body.keywords
+        keywords: req.body.keywords,
+        capacidadActual: Math.floor(Math.random()*99)+1
     })
     try {
         const newPunto = await punto.save()
@@ -33,6 +33,8 @@ router.get('/', async (req, res) => {
         res.status(400).json({ message: error.message })
     }
  })
+
+
 
 // Punto individual
 router.get('/:id', (req, res) => {
