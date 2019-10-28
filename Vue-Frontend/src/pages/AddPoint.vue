@@ -46,10 +46,14 @@ export default {
         .catch(err => {
           console.log(err.response);
         });
-      console.log(this.$refs.formPunto.punto);
-      console.log(this.$refs.keyCard.keywords);
-      console.log(this.$refs.locCard.lat);
-      console.log(this.$refs.locCard.lng);
+      this.$refs.formPunto.punto = {
+        name: "",
+        desc: "",
+        imageData: null
+      };
+      this.$refs.keyCard.keywords = [];
+      this.$refs.locCard.lng = null;
+      this.$refs.locCard.lat = null;
     }
   }
 };
