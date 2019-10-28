@@ -18,14 +18,30 @@
 import FormularioPunto from "./AddPoint/FormularioPunto.vue";
 import KeyWords from "./AddPoint/KeyWords.vue";
 import Location from "./AddPoint/Location.vue";
+
+import axios from "axios";
+
 export default {
   components: {
     FormularioPunto,
     KeyWords,
     Location
   },
-  methods:{
-    addNewPoint(){
+  methods: {
+    addNewPoint() {
+      axios
+        .post("http://localhost:7070/puntos", {
+          nombre: this.$refs.formPunto.punto.name,
+          descripcion: this.$refs.formPunto.punto.desc,
+          latitud: this.$refs.locCard.lat,
+          longitud: this.$refs.locCard.lng
+        })
+        .then(res => {
+          console.log(res);
+        })
+        .catch(err => {
+          console.log(err.response);
+        });
       console.log(this.$refs.formPunto.punto);
       console.log(this.$refs.keyCard.keywords);
       console.log(this.$refs.locCard.lat);
