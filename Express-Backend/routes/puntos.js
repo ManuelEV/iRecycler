@@ -15,12 +15,25 @@ router.get('/', async (req, res) => {
  
  // Punto individual
  router.get('/:id', (req, res) => {
+
  })
  
  // Agregar un punto
- router.post('/', (req, res) => {
+ router.post('/', async (req, res) => {
+     const punto = new Punto ({
+        nombre: req.body.nombre,
+        latitud: req.body.latitud,
+        longitud: req.body.longitud,
+        descripcion: req.body.descripcion
+    })
+    try {
+        const newPunto = await punto.save()
+        res.status(201).json(newPunto)
+    } catch (error) {
+        res.status(400).json({ message: error.message })
+    }
  })
- 
+
  // Updating one subscriber
  router.patch('/:id', (req, res) => {
  })
@@ -30,5 +43,3 @@ router.get('/', async (req, res) => {
  })
 
 module.exports = router
-
-
