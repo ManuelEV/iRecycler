@@ -44,6 +44,49 @@ export default {
       ]
     };
   },
-  methods: {}
+  methods: {
+    list(){
+
+      const url = this.ruta+"/puntos";
+      //console.log(url);
+
+      let me = this;
+
+      axios.get(url)
+        .then(function (r) {
+
+
+          const response = r.data;
+
+          console.log(response);
+
+          for (const i in response){
+
+            const lat = response[i].latitud;
+            const long = response[i].longitud;
+
+
+
+            const nombre = response[i].nombre;
+            const descripcion = response[i].descripcion;
+
+            const punto = {
+              nombre: nombre,
+              descripcion: descripcion,
+              capacidad: 60,
+              data: { labels: [], series: [40, 60] },
+              options: {}
+            };
+
+            me.misPuntos.push(punto);
+
+          }
+
+        });
+    }
+  },
+  mounted(){
+    this.list();
+  }
 };
 </script>
