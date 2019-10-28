@@ -13,7 +13,7 @@
       </p>
     </template>
     <div>
-      <div :id="chartId" class="ct-chart"></div>
+      <div :id="chartId" class="ct-chart justify-content-center"></div>
       <div class="footer">
         <div class="chart-legend">
           <slot name="legend"></slot>
@@ -79,6 +79,10 @@ export default {
      * Initializes the chart by merging the chart options sent via props and the default chart options
      */
     initChart(Chartist) {
+      console.log(this.chartData);
+      for (let index = 0; index < this.chartData.series.length; index++) {
+        this.chartData.labels.push(this.chartData.series[index]+"%");
+      }
       const chartIdQuery = `#${this.chartId}`;
       Chartist[this.chartType](
         chartIdQuery,

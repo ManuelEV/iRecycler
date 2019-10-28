@@ -1,33 +1,45 @@
 <template>
-  <div class="row" v-for="(punto, index) in misPuntos" :key="index">
-    <chart-card
-      :title="punto.nombre"
-      :sub-title="punto.descripcion"
-      :chart-data="punto.data"
-      chart-type="Pie"
-    >
-      <span slot="footer">
-        <i class="ti-timer"></i> Campaign set 2 days ago
-      </span>
-      <div slot="legend">
-        <i class="fa fa-circle text-info"></i> Open
-        <i class="fa fa-circle text-danger"></i> Bounce
-        <i class="fa fa-circle text-warning"></i> Unsubscribe
+  <div>
+    <div v-for="(punto, index) in misPuntos" :key="index">
+      <div>
+        <chart-card
+          :title="punto.nombre"
+          :sub-title="punto.descripcion"
+          :chart-data="punto.data"
+          chart-type="Pie"
+        >
+          <div slot="legend">
+            <i class="fa fa-circle text-info"></i> Libre
+            <i class="fa fa-circle text-warning"></i> Ocupado
+          </div>
+        </chart-card>
       </div>
-    </chart-card>
+    </div>
   </div>
 </template>
 <script>
 import axios from "axios";
-
+import ChartCard from "@/components/Cards/ChartCard.vue";
 export default {
+  components: {
+    ChartCard
+  },
   data() {
     return {
       misPuntos: [
         {
           nombre: "nombre mal escrito",
-          capacidad: 50,
-          data: { labels: ["Ocupado", "No Ocupado"], series: [50, 50] }
+          descripcion: "La peor descripcion",
+          capacidad: 60,
+          data: { labels: [], series: [40, 60] },
+          options: {}
+        },
+        {
+          nombre: "nombre mal escrito 2",
+          descripcion: "La peor descripcion",
+          capacidad: 60,
+          data: { labels: [], series: [40, 60] },
+          options: {}
         }
       ]
     };

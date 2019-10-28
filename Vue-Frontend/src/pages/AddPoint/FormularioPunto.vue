@@ -37,8 +37,8 @@ export default {
   data() {
     return {
       punto: {
-        name: "El nombre menos esperado",
-        desc: "La Descripción más cabrona",
+        name: "",
+        desc: "",
         imageData: null
       }
     };
