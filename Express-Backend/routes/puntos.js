@@ -13,11 +13,6 @@ router.get('/', async (req, res) => {
     }
  })
  
- // Punto individual
- router.get('/:id', (req, res) => {
-
- })
- 
  // Agregar un punto
  router.post('/', async (req, res) => {
      const punto = new Punto ({
@@ -33,6 +28,11 @@ router.get('/', async (req, res) => {
         res.status(400).json({ message: error.message })
     }
  })
+
+// Punto individual
+router.get('/:id', (req, res) => {
+
+})
 
  // 
  router.patch('/:id', (req, res) => {
