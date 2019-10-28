@@ -29,13 +29,17 @@ export default {
   },
   methods: {
     addNewPoint() {
+      const qs = require("qs");
       axios
-        .post("http://localhost:7070/puntos", {
-          nombre: this.$refs.formPunto.punto.name,
-          descripcion: this.$refs.formPunto.punto.desc,
-          latitud: this.$refs.locCard.lat,
-          longitud: this.$refs.locCard.lng
-        })
+        .post(
+          "http://localhost:7070/puntos",
+          qs.stringify({
+            nombre: this.$refs.formPunto.punto.name,
+            descripcion: this.$refs.formPunto.punto.desc,
+            latitud: this.$refs.locCard.lat,
+            longitud: this.$refs.locCard.lng
+          })
+        )
         .then(res => {
           console.log(res);
         })

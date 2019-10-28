@@ -19,7 +19,7 @@
     </div>
     <br>
     <div v-if="!mMapa" class="row justify-content-center">
-      <button class="btn btn-success" @click="mostrarMapa">Confirmar Posición</button>
+      <button class="btn btn-success" @click="mostrarMapa">Ocultar Mapa</button>
     </div>
   </card>
 </template>
