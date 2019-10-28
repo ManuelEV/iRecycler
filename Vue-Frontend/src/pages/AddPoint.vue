@@ -39,7 +39,8 @@ export default {
             nombre: this.$refs.formPunto.punto.name,
             descripcion: this.$refs.formPunto.punto.desc,
             latitud: this.$refs.locCard.lat,
-            longitud: this.$refs.locCard.lng
+            longitud: this.$refs.locCard.lng,
+            keywords: this.$refs.keyCard.keywords
           })
         )
         .then(res => {
