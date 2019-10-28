@@ -1,7 +1,7 @@
 <template>
 
   <div class="row map">
-    <l-map :zoom="zoom" :center="center" @click="addMarker">
+    <l-map :zoom="zoom" :center="center"> <!-- @click="addMarker">-->
       <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
       <l-marker v-for="addM, index in markers" :lat-lng="addM">
         <l-popup>
