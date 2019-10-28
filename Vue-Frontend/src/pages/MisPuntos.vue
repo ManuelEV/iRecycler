@@ -1,20 +1,22 @@
 <template>
-  <div class="row" v-for="(punto, index) in misPuntos" :key="index">
-    <chart-card
-      :title="punto.nombre"
-      :sub-title="punto.descripcion"
-      :chart-data="punto.data"
-      chart-type="Pie"
-    >
-      <span slot="footer">
-        <i class="ti-timer"></i> Campaign set 2 days ago
-      </span>
-      <div slot="legend">
-        <i class="fa fa-circle text-info"></i> Open
-        <i class="fa fa-circle text-danger"></i> Bounce
-        <i class="fa fa-circle text-warning"></i> Unsubscribe
-      </div>
-    </chart-card>
+  <div>
+    <div class="row" v-for="(punto, index) in misPuntos" :key="index">
+      <chart-card
+        :title="punto.nombre"
+        :sub-title="punto.descripcion"
+        :chart-data="punto.data"
+        chart-type="Pie"
+      >
+        <span slot="footer">
+          <i class="ti-timer"></i> Campaign set 2 days ago
+        </span>
+        <div slot="legend">
+          <i class="fa fa-circle text-info"></i> Open
+          <i class="fa fa-circle text-danger"></i> Bounce
+          <i class="fa fa-circle text-warning"></i> Unsubscribe
+        </div>
+      </chart-card>
+    </div>
   </div>
 </template>
 <script>
