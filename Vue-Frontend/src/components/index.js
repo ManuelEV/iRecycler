@@ -1,4 +1,4 @@
-
+import FormGroupInput from "./Inputs/formGroupInput.vue";
 import DropDown from "./Dropdown.vue";
 import Button from "./Button";
 
@@ -9,6 +9,7 @@ import StatsCard from "./Cards/StatsCard.vue";
 import SidebarPlugin from "./SidebarPlugin/index";
 
 let components = {
+  FormGroupInput,
   Card,
   ChartCard,
   StatsCard,
@@ -19,6 +20,7 @@ let components = {
 export default components;
 
 export {
+  FormGroupInput,
   Card,
   ChartCard,
   StatsCard,
