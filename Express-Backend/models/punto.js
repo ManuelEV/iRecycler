@@ -4,15 +4,15 @@ const PuntoSchema = mongoose.Schema(
     {
     nombre: {
         type: String,
-        require: true
+        required: true
     },
     latitud: {
         type: Number,
-        require: true
+        required: true
     },
     longitud: {
         type: Number,
-        require: true
+        required: true
     },
     descripcion: {
         type: String
