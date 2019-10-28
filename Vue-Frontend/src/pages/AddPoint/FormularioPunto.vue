@@ -6,7 +6,7 @@
         :style="{ 'background-image': `url(${punto.imageData})` }"
         @click="chooseImage"
       >
-        <span v-if="!punto.imageData" class="placeholder">Escoge una Imagen</span>
+        <span v-if="!punto.imageData" class="placeholder">Haz click aquí para agregar una imagen</span>
         <input class="file-input" ref="fileInput" type="file" @input="onSelectFile" />
       </div>
     </div>
@@ -39,7 +39,7 @@ export default {
       punto: {
         name: "El nombre menos esperado",
         desc: "La Descripción más cabrona",
-        imageData: "/img/background2.7e949f88.jpg"
+        imageData: null
       }
     };
   },

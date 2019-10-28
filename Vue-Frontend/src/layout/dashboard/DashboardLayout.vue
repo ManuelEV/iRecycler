@@ -2,15 +2,9 @@
   <div class="wrapper">
     <side-bar>
       <template slot="links">
-        <sidebar-link to="/dashboard" name="Dashboard" icon="ti-panel"/>
-        <sidebar-link to="/stats" name="User Profile" icon="ti-user"/>
-        <sidebar-link to="/table-list" name="Table List" icon="ti-view-list-alt"/>
-        <sidebar-link to="/typography" name="Typography" icon="ti-text"/>
-        <sidebar-link to="/icons" name="Icons" icon="ti-pencil-alt2"/>
-        <sidebar-link to="/maps" name="Map" icon="ti-map"/>
-        <sidebar-link to="/notifications" name="Notifications" icon="ti-bell"/>
-        <sidebar-link to="/nuevo-punto" name="Agregar Nuevo Punto" icon="ti-plus"/>
-        <sidebar-link to="/mapa" name="Mapa" icon="ti-map"/>
+        <sidebar-link to="/mapa" name="Mapa" icon="ti-map" />
+        <sidebar-link to="/mis-puntos" name="Mis Puntos" icon="ti-search" />
+        <sidebar-link to="/nuevo-punto" name="Agregar Nuevo Punto" icon="ti-plus" />
       </template>
       <mobile-menu>
         <li class="nav-item">
@@ -19,10 +13,7 @@
             <p>Stats</p>
           </a>
         </li>
-        <drop-down class="nav-item"
-                   title="5 Notifications"
-                   title-classes="nav-link"
-                   icon="ti-bell">
+        <drop-down class="nav-item" title="5 Notifications" title-classes="nav-link" icon="ti-bell">
           <a class="dropdown-item">Notification 1</a>
           <a class="dropdown-item">Notification 2</a>
           <a class="dropdown-item">Notification 3</a>
@@ -41,10 +32,7 @@
     <div class="main-panel">
       <top-navbar></top-navbar>
 
-      <dashboard-content @click.native="toggleSidebar">
-
-      </dashboard-content>
-
+      <dashboard-content @click.native="toggleSidebar"></dashboard-content>
 
       <content-footer></content-footer>
     </div>
