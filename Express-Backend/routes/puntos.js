@@ -34,11 +34,11 @@ router.get('/', async (req, res) => {
     }
  })
 
- // Updating one subscriber
+ // 
  router.patch('/:id', (req, res) => {
  })
  
- // Deleting one subscriber
+ // 
  router.delete('/:id', (req, res) => {
  })
 
