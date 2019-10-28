@@ -26,22 +26,7 @@ export default {
   },
   data() {
     return {
-      misPuntos: [
-        {
-          nombre: "nombre mal escrito",
-          descripcion: "La peor descripcion",
-          capacidad: 60,
-          data: { labels: [], series: [40, 60] },
-          options: {}
-        },
-        {
-          nombre: "nombre mal escrito 2",
-          descripcion: "La peor descripcion",
-          capacidad: 60,
-          data: { labels: [], series: [40, 60] },
-          options: {}
-        }
-      ]
+      misPuntos: []
     };
   },
   methods: {
@@ -65,7 +50,15 @@ export default {
             const lat = response[i].latitud;
             const long = response[i].longitud;
 
+            var  capacidadActual = response[i].capacidadActual;
 
+            if (capacidadActual == null){
+              capacidadActual = 0;
+            }
+
+            const capacidadSobrante = 100 - capacidadActual;
+
+            //if(capacidadActual)
 
             const nombre = response[i].nombre;
             const descripcion = response[i].descripcion;
@@ -73,8 +66,8 @@ export default {
             const punto = {
               nombre: nombre,
               descripcion: descripcion,
-              capacidad: 60,
-              data: { labels: [], series: [40, 60] },
+              capacidad: capacidadActual,
+              data: { labels: [], series: [capacidadSobrante, capacidadActual] },
               options: {}
             };
 

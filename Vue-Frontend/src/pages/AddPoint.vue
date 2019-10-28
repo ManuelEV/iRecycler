@@ -7,11 +7,13 @@
         <location ref="locCard"></location>
       </div>
     </div>
+
     <div class="row justify-content-center">
       <card class="card">
         <button class="btn btn-info" type="button" @click="addNewPoint">Agregar Nuevo Punto</button>
       </card>
     </div>
+
   </div>
 </template>
 <script>
@@ -42,6 +44,7 @@ export default {
         )
         .then(res => {
           console.log(res);
+
         })
         .catch(err => {
           console.log(err.response);

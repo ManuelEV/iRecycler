@@ -7,8 +7,11 @@
         <l-popup>
           <b>Nombre:</b><br>
           {{nombres[index]}} <br>
-          <b>Descripción</b><br>
-          {{descripciones[index]}}
+          <b>Descripción:</b><br>
+          {{descripciones[index]}}<br>
+          <b>Capacidad actual:</b><br>
+          {{capacidades[index]}}%
+
         </l-popup>
       </l-marker>
       <l-control class="example-custom-control">
@@ -60,7 +63,8 @@
         showParagraph: false,
         markers: [],
         nombres: [],
-        descripciones: []
+        descripciones: [],
+        capacidades: []
       }
     },
     methods: {
@@ -86,8 +90,11 @@
               const nombre = response[i].nombre;
               const descripcion = response[i].descripcion;
 
+              const capacidadActual = response[i].capacidadActual;
+
               me.nombres.push(nombre);
               me.descripciones.push(descripcion);
+              me.capacidades.push(capacidadActual);
 
             }
 

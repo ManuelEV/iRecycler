@@ -3,7 +3,7 @@
     <side-bar>
       <template slot="links">
         <sidebar-link to="/mapa" name="Mapa" icon="ti-map" />
-        <sidebar-link to="/mis-puntos" name="Mis Puntos" icon="ti-search" />
+        <sidebar-link to="/mis-puntos" name="Mis Puntos" icon="ti-dashboard" />
         <sidebar-link to="/nuevo-punto" name="Agregar Nuevo Punto" icon="ti-plus" />
       </template>
       <mobile-menu>
