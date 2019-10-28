@@ -65,24 +65,18 @@
     },
     methods: {
       list(){
-        console.log(this.ruta);
-        console.log("SADASDSD");
 
         const url = this.ruta+"/puntos";
-        console.log(url);
+        //console.log(url);
 
         let me = this;
 
         axios.get(url)
           .then(function (r) {
             const response = r.data;
-            console.log(response);
 
-            //me.markers = response;
-            //console.log(this.marker);
-            //var x;
+
             for (const i in response){
-              console.log(response[i].nombre);
 
               const lat = response[i].latitud;
               const long = response[i].longitud;
