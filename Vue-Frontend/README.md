@@ -1,20 +1,12 @@
-## Build Setup
+## Intrucciones de Instalación
 ```
 Es necesario contar con un entorno de desarrollo o desplique que cuente con node y vue-cli.
 ```
-### install dependencies
+### Instalar Dependecias
 ```
 npm install
 ```
-### serve with hot reload at localhost:8080
+### Iniciar servidor con recarga en caliente (hot-reload) en la dirreción localhost:8080
 ```
 npm run dev
-```
-### build for production with minification
-```
-npm run build
-```
-### lint
-```
-npm run lint
 ```
