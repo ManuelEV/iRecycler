@@ -1,5 +1,7 @@
 ## Build Setup
-
+```
+Es necesario contar con un entorno de desarrollo o desplique que cuente con node y vue-cli.
+```
 ### install dependencies
 ```
 npm install
