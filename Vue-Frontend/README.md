@@ -1,6 +1,6 @@
 ## Intrucciones de Instalación
 ```
-Es necesario contar con un entorno de desarrollo o desplique que cuente con node y vue-cli.
+Es necesario contar con un entorno de desarrollo o despligue que cuente con node y vue-cli.
 ```
 ### Instalar Dependecias
 ```
